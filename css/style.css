@@ -1,0 +1,89 @@
+/*base classes*/
+.box {
+    padding:15px;
+    border-radius:10px;
+    background: white;
+}
+.flex{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+hr {margin-top:5px}
+a,a:hover,a:active{text-decoration: none;color:inherit}
+.clearfix{clear: both;}
+
+/*----------------------start header-------------------*/
+header {
+    background-color: #2f3242;
+    box-shadow: 0px 10px 35px -10px #888888;
+}
+.menu,.logo{
+    display: flex;
+    align-items: center;
+    color: #fff;
+    margin: 0;
+    height: 70px;
+}
+.menu li + li {
+    margin-left:40px;
+}
+.add{
+    display: inline-block;
+    margin: 0;
+    padding: 5px 10px 5px 5px;
+}
+.add-btn{
+    border: 2px solid #2091eb;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 50px;
+    width: 140px;
+    border-radius: 25px;
+}
+.icon{
+    padding-right: 10px;
+    color: #2091eb;
+}
+.user{
+    display: flex;
+    align-items: center;
+}
+.profile{
+    width: 50px;
+    height: 50px;
+    background-color: #000;
+    border-radius: 50%;
+    display: inline-block;
+}
+.list{
+    display: inline-block;
+    margin-left: 10px;
+}
+.search,.notfication{font-size: 20px;}
+
+/*----------------------end header---------------------*/
+
+/*----------------------start side menu----------------*/
+.menu-bar .menu-bar-icons{
+    max-width: 100px;
+    background-color: #2d303f;
+    color: #737aa1;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    height: 1000px;
+    box-shadow: 10px 0px 25px -10px #000;
+}
+.menu-bar .menu-bar-icons ul{padding: 0 25px;top: 0;}
+.menu-bar .menu-bar-icons ul li{
+    font-size: 30px;
+    margin: 50px 0;
+}
+.menu-bar .menu-bar-icons ul li:hover{color: #fff;}
+.menu-bar .menu-bar-icons ul li a:focus{color: #FFF;}
+
+
+/*----------------------end side menu------------------*/
