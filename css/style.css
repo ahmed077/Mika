@@ -13,6 +13,7 @@ hr {margin-top:5px}
 a,a:hover,a:active{text-decoration: none;color:inherit}
 *{margin: 0;padding:0;}
 body{background:#2a2c3b;letter-spacing: 1px;font-family:'Montserrat', sans-serif;}
+.trans{transition:all 0.2s ease-in-out;}
 /*----------------------start header-------------------*/
 header {
     background-color: #2f3242;
@@ -109,6 +110,7 @@ header {
     border:1px solid #fff;
     border-radius:15px;
     position: relative;
+    cursor: pointer;
 }
 .option-bar .p-menu span {
     display: block;
