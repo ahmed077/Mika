@@ -24,11 +24,33 @@ $(function () {
         }
     });
     var moving = false,
+        divTall = 0,
+        mainTall,
+        tallPerc,
+        scrollTall,
         $loginMsg = $('.loginMsg'),
         $login = $('.login'),
         $signupMsg = $('.signupMsg'),
         $signup = $('.signup'),
         $frontbox = $('.frontbox');
+/*
+    $('#switch1').on('click', function () {
+        $loginMsg.toggleClass("visibility");
+        $frontbox.addClass("moving");
+        $signupMsg.toggleClass("visibility");
+
+        $signup.toggleClass('hide');
+        $login.toggleClass('hide');
+    });
+    
+    $('#switch2').on('click', function () {
+        $loginMsg.toggleClass("visibility");
+        $frontbox.removeClass("moving");
+        $signupMsg.toggleClass("visibility");
+
+        $signup.toggleClass('hide');
+        $login.toggleClass('hide');
+    });*/
     $signup.hide().removeClass('hide');
     $('#switch1, #switch2').on('click', function () {
         if (!moving) {
@@ -55,4 +77,12 @@ $(function () {
             $('i', this).removeClass('fa-square-o').addClass('fa-check-square-o');
         }
     });
+    $('.task').each(function () {
+        divTall += $(this).outerHeight();
+    });
+    mainTall = $('main').outerHeight();
+    tallPerc = (mainTall / divTall) *   100;
+    mainTall = mainTall - mainTall * 10 / 100;
+    scrollTall = mainTall * tallPerc / 100;
+    $('.scroll').css('height', scrollTall + 'px');
 });
