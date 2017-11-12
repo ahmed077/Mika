@@ -11,6 +11,10 @@ added login / signup form
 added home page
 Integration of projects page, canvas, svg, form 
 
+# TODO List:
+# #1 Colors adjustments
+# #2 Hover, active, animation effects
+# #3 Making the pages responsive to different screen sizes
 
 Migration guide to bootstrap 4
 https://v4-alpha.getbootstrap.com/migration/
