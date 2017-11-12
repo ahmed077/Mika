@@ -1,90 +1,3 @@
-/*base classes*/
-.box {
-    padding:15px;
-    border-radius:10px;
-    background: white;
-}
-.flex {
-    display:flex;
-    justify-content: center;
-    align-items: center;
-}
-hr {margin-top:5px}
-a,a:hover,a:active{text-decoration: none;color:inherit}
-*{margin: 0;padding:0;}
-body{background:#2a2c3b;letter-spacing: 1px;font-family:'Montserrat', sans-serif;}
-.trans{transition:all 0.2s ease-in-out;}
-/*----------------------start header-------------------*/
-header {
-    background-color: #2f3242;
-    position:relative;
-    box-shadow: 0px 10px 35px -10px #1d1e29
-}
-.menu,.logo{
-    color: #fff;
-    height: 70px;
-}
-.menu li + li {
-    margin-left:40px;
-}
-.add-btn{
-    border: 2px solid #2091eb;
-    height: 50px;
-    width: 140px;
-    border-radius: 25px;
-}
-.add{
-    margin:0 15px 0 0;
-    padding: 5px 10px 5px 5px;
-}
-.icon{
-    padding-right: 10px;
-    color: #2091eb;
-}
-.notify{position: relative;}
-.notify::before {
-    display:block;
-    position: absolute;
-    content:"";
-    top:2px;
-    right:-2px;
-    background:#2091eb;
-    border:2px solid #2f3242;
-    border-radius:50%;
-    width:13px;
-    height:13px;
-}
-.profile{
-    width: 50px;
-    height: 50px;
-    background-color: #000;
-}
-.list{
-    margin-left: 10px;
-}
-.search,.notfication{font-size: 20px;}
-
-/*----------------------end header---------------------*/
-
-/*----------------------start side menu----------------*/
- .menu-bar-icons{
-    width:84px;
-    background-color: #2f3242;
-    color: #737aa1;
-    height:calc(100vh - 70px);
-    align-items:flex-start;
-    box-shadow: 10px 0px 15px -10px #1d1e29;
-}
- .menu-bar-icons ul{padding: 0 25px;top: 0;}
- .menu-bar-icons ul li{
-    font-size: 30px;
-    margin: 50px 0;
-}
- .menu-bar-icons ul li:hover{color: #fff;}
- .menu-bar-icons ul li a:focus{color: #FFF;}
-
-
-/*----------------------end side menu------------------*/
 /*----------------------start option bar---------------*/
 .option-bar{
     background-color: #237cc6;
@@ -106,36 +19,227 @@ header {
 }
 .option-bar .p-menu {
     height:30px;
-    padding:0 20px;
+    padding:0 40px 0 20px;
     border:1px solid #fff;
     border-radius:15px;
     position: relative;
     cursor: pointer;
+    max-width:300px;
+    min-width:150px;
 }
-.option-bar .p-menu span {
+.option-bar .p-menu i {
     display: block;
-    margin-right:63px;
+    position:absolute;
+    right:10px;
+    top:8px;
+    z-index: 2;
 }
-.option-bar .p-menu.open {
-    border-radius:15px 15px 0 0;
-    border-bottom:none
-}
+
 .option-bar .p-menu ul {
-    position: absolute;
+    border-radius:15px;
+    position:absolute;
     border:1px solid #fff;
-    left:-1px;
     border-top:none;
-    border-radius:0 0 15px 15px;
-    overflow: hidden;
-    top:100%;
     width:calc(100% + 2px);
+    overflow: hidden;
+    left:-1px;
 }
 .option-bar .p-menu ul li {
-    padding:5px 0 5px 20px;
     background:#237cc6;
-    border-top:1px solid #fff;
+    padding:7px 0 7px 15px;
+}
+
+.option-bar .p-menu ul li.selected {
+    background:#2a6ba1;
+}
+.option-bar .p-menu ul li:not(.selected) {
+    display:none;
 }
     /*-----------------------end option bar----------------*/
+/*  ======================
+    All Goals Page
+=======================  */
+main {
+    padding-right:15px;
+    padding-left:56px;
+}
 .main{
-    padding:0 15px 0 40px;
+    padding:20px 15px 20px 0;
+}
+.main .labels{
+    padding-left:45px
+}
+.main .task {
+    padding-left:40px;
+}
+.main .labels, .main .task {
+    padding-top:20px;
+    padding-bottom:20px;
+}
+.main .task {
+    background:#3a3e52;
+    color:#fff;
+    border-left:5px solid #fff;
+    border-radius:5px;
+}
+.main .task .subtext {
+    color:#9ea3b4;
+}
+.main .flex .progress {
+    margin-bottom: 0;
+    background:#585c70;
+    height:7px;
+    width:calc(100% - 40px);
+    margin-left:5px;
+}
+.main .row .flex > div:not(.progress):not(.profile) {
+    margin-left:20px;
+}
+.main .task > .flex {
+    width:100%;
+}
+.main .task .assign{
+    justify-content: flex-start;
+}
+.main .task i {
+    margin-left:auto;
+    
+}
+/*=======================
+    Login/Signup Form
+========================*/
+.form {
+    /*border:1px solid white;*/
+    height: 70%;
+    position: relative;
+
+}
+
+.backbox {
+    background-color: #585c70;
+    width: 100%;
+    height: 80%;
+    display: inline-flex;
+/*
+    position: absolute;
+    top: 50%;
+*/
+}
+
+.frontbox {
+    background-color: white;
+    border-radius: 20px;
+    min-height: 100%;
+    width: 50%;
+    z-index: 10;
+    position: absolute;
+    right: 0;
+    margin-right: 3%;
+    margin-left: 3%;
+    transition: right .8s ease-in-out;
+}
+
+.moving {
+    right: 44%;
+}
+
+.loginMsg,
+.signupMsg {
+    width: 50%;
+    height: 100%;
+    font-size: 15px;
+    box-sizing: border-box;
+}
+
+.loginMsg .title,
+.signupMsg .title {
+    font-weight: 300;
+    font-size: 23px;
+}
+
+.loginMsg p,
+.signupMsg p {
+    font-weight: 100;
+}
+
+.textcontent {
+    color: white;
+}
+.inputbox{margin-top:30px}
+.loginMsg button,
+.signupMsg button {
+    background-color: transparent;
+    border: 2px solid white;
+    border-radius: 10px;
+    color: white;
+    font-size: 12px;
+    width: 80px;
+    box-sizing: content-box;
+    font-weight: 300;
+    padding: 10px;
+    margin-top: 20px;
+}
+
+/* front box content*/
+
+.login,
+.signup {
+    padding: 20px;
+    text-align: center;
+    min-height:100%;
+}
+
+.login h2,
+.signup h2 {
+    color: #337ab7;
+    font-size: 22px;
+    margin-top:0;
+}
+
+.login input:not([type="submit"]),
+.signup input:not([type="submit"]) {
+    display: block;
+    width: 100%;
+    height: 40px;
+    background-color: #f2f2f2;
+    border: none;
+    margin-bottom: 20px;
+    font-size: 12px;
+}
+
+.login,.signup{flex-direction: column;}
+/* Fade In & Out*/
+
+.login p {
+    cursor: pointer;
+    color: #404040;
+    font-size: 15px;
+}
+
+.loginMsg,
+.signupMsg {
+    transition: opacity .8s ease-in-out;
+}
+
+.visibility {
+    opacity: 0;
+}
+
+.forget{opacity: 0.7;}
+.forget:hover{opacity:1}
+.checkboxes{
+    color: #000;
+    width: 100%;
+    justify-content: flex-start;
+}
+.forget-ps{
+    font-weight: 100;
+    opacity: .9;
+}
+.forget-ps i, .agree-terms i{
+    margin-right: 10px;
+    width:15px;
+}
+.agree-terms p {
+    margin-bottom: 0;
 }
