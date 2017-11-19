@@ -1,76 +1,95 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Inbox</title>
+    <title>Home Page</title>
     <link rel="stylesheet" href="libs/bootstrap.min.css">
     <link rel="stylesheet" href="libs/font-awesome.min.css">
     <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+    <link rel="stylesheet" href="css/base.css">
     <link rel="stylesheet" href="css/style.css">
 </head>
-<body>    
-    <header>
-        <div class="container-fluid">
-            <div class="row">
-                <div class="col-xs-12">
-                    <div class="pull-left flex logo"><h3>logo</h3></div>
-                    <ul class="pull-right flex menu list-unstyled">
-                        <li><a href="#">
+<body>
+<header>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xs-12">
+                <div class="pull-left flex logo">
+                    <h3>logo</h3>
+                </div>
+                <ul class="pull-right flex menu list-unstyled">
+                    <li>
+                        <a href="#">
                             <div class="flex add-btn">
                                 <h3 class="add">Add</h3>
                                 <i class="fa fa-plus icon" aria-hidden="true"></i>
                             </div>
                         </a>
-                        </li>
-                        <li class="search"><a href="#"><i class="fa fa-search" aria-hidden="true"></i></a></li>
-                        <li class="notify notfication"><a href="#"><i class="fa fa-bell-o" aria-hidden="true"></i></a></li>
-                        <li class="user flex">
-                            <a href="#"><div class="img-circle profile"></div></a>
-                            <div class="list">
-                                <i class="fa fa-chevron-down" aria-hidden="true"></i>
-                            </div>
-                        </li>
-                    </ul>
-                </div>
+                    </li>
+                    <!--<li class="search">-->
+                    <!--<a href="#">-->
+                    <!--<i class="fa fa-search" aria-hidden="true"></i>-->
+                    <!--</a>-->
+                    <!--</li>-->
+                    <li class=" notfication">
+                        <a href="#">
+                            <i class="fa fa-bell-o" aria-hidden="true"></i>
+                        </a>
+                    </li>
+                    <li class="user flex">
+                        <a href="profile.php">
+                            <div class="img-circle profile"></div>
+                        </a>
+                        <div class="list">
+                            <i class="fa fa-chevron-down" aria-hidden="true" id="settings-menu"></i>
+                            <ul class="list-unstyled hide">
+                                <li>
+                                    <a href="profile.php"><i class="fa fa-user"></i>Profile</a>
+                                </li>
+                                <li>
+                                    <a href="settings.php"><i class="fa fa-gear"></i>Settings</a>
+                                </li>
+                                <li>
+                                    <a href="logout.php"><i class="fa fa-sign-out"></i>Logout</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                </ul>
             </div>
         </div>
-    </header>
-    <aside class="menu-bar-icons flex pull-left">
-        <ul class="list-unstyled">
-            <li><a href="#"><i class="fa fa-home" aria-hidden="true"></i></a></li>
-            <li><a href="#"><i class="fa fa-bars" aria-hidden="true"></i></a></li>
-            <li><a href="#"><i class="fa fa-line-chart" aria-hidden="true"></i></a></li>
-            <li class="notify"><a href="#"><i class="fa fa-envelope" aria-hidden="true"></i></a></li>
-            <li><a href="#"><i class="fa fa-users" aria-hidden="true"></i></a></li>
-        </ul>
-    </aside>
-    <section class="option-bar pull-left">
-        <div class="row">
-            <div class="col-xs-12 ">
-                <div class="pull-left sort"><span id="projects-sort">all</span> Projects <span id="projects-count">(555)</span></div>
-                <!--<div class="pull-left">Workflow</div>-->
-                <div class="pull-right flex">
-                    <div class="show-p pull-left">show Projects:</div>
-                    <div id="sort-projects" class="p-menu pull-left flex trans">
-                        <span>All</span>
-                        <i class="trans fa fa-chevron-down"></i>
-                        <ul class="list-unstyled hidden">
-                            <li>Lorem.</li>
-                            <li>Dolorum!</li>
-                            <li>Harum!</li>
-                            <li>Quidem!</li>
-                            <li>In!</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <section class="main">
-
-    </section>
-
-
+    </div>
+</header>
+<aside class="menu-bar-icons flex pull-left">
+    <ul class="list-unstyled">
+        <li class="active">
+            <a href="index.php">
+                <i class="fa fa-home" aria-hidden="true"></i>
+            </a>
+        </li>
+        <li class="">
+            <a href="goals.php">
+                <i class="fa fa-bars" aria-hidden="true"></i>
+            </a>
+        </li>
+        <li class="">
+            <a href="#">
+                <i class="fa fa-line-chart" aria-hidden="true"></i>
+            </a>
+        </li>
+        <li class="">
+            <a href="chat.php">
+                <i class="fa fa-envelope" aria-hidden="true"></i>
+            </a>
+        </li>
+        <li class="">
+            <a href="members.php">
+                <i class="fa fa-users" aria-hidden="true"></i>
+            </a>
+        </li>
+    </ul>
+</aside>
 <script src="libs/jquery.min.js"></script>
 <script src="libs/bootstrap.min.js"></script>
 <script src="js/script.js"></script>

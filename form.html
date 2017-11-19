@@ -1,0 +1,92 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Home Page</title>
+    <link rel="stylesheet" href="libs/bootstrap.min.css">
+    <link rel="stylesheet" href="libs/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body><main class="pull-left flex">
+    <div class="col-sm-8 col-sm-10 form flex">
+        <div class="backbox">
+            <div class="loginMsg flex">
+                <div class="textcontent">
+                    <p class="title">Don't have an account?</p>
+                    <p>Sign up to save all your graph.</p>
+                    <button data-target=".signup" id="switch1">SIGN UP</button>
+                </div>
+            </div>
+            <div class="signupMsg visibility flex">
+                <div class="textcontent">
+                    <p class="title">Have an account?</p>
+                    <p>Log in to see all your collection.</p>
+                    <button data-target=".login" id="switch2">LOGIN</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="frontbox flex">
+            <form method="post" action="/mika/public/index.php" class="login col-xs-12 flex">
+                <h2>LOGIN</h2>
+                <div class="inputbox col-xs-12">
+                    <div class="form-group">
+                        <input required id="login-email" class="form-control" type="text" name="email" placeholder="  EMAIL">
+                    </div>
+                    <div class="form-group">
+                        <input required id="login-password" class="form-control" type="password" name="password" placeholder="  PASSWORD">
+                        <div class="error alert alert-danger hide"></div>
+                    </div>
+                    <div class="form-group checkboxes flex">
+                        <input type="checkbox" name="remember" class="hide">
+                        <label class="forget-ps flex text-muted">
+                            <i class="fa fa-square-o"></i>
+                            Remember Me
+                        </label>
+                    </div>
+                </div>
+                <div class="form-group"><a class="forget" href="#">FORGET PASSWORD?</a></div>
+                <input type="submit" class="btn btn-primary" value="LOGIN">
+            </form>
+
+            <form method="post" action="/mika/public/index.php" class="signup hide col-xs-12 flex">
+                <h2>SIGN UP</h2>
+                <div class="inputbox col-xs-12">
+                    <div class="form-group">
+                        <input required id="signup-name" class="form-control" type="text" name="fullname" placeholder="  FULLNAME">
+                        <div class="error hide alert alert-danger"></div>
+                    </div>
+                    <div class="form-group">
+                        <input required id="signup-email" class="form-control" type="text" name="email" placeholder="  EMAIL">
+                        <div class="error hide alert alert-danger"></div>
+                    </div>
+                    <div class="form-group">
+                        <input required id="signup-password" class="form-control" type="password" name="password" placeholder="  PASSWORD">
+                        <div class="error hide alert alert-danger"></div>
+                    </div>
+                    <div class="form-group">
+                        <input required id="signup-confirmpassword" class="form-control" type="password" name="confirmpassword" placeholder="  CONFIRM PASSWORD">
+                        <div class="error hide alert alert-danger"></div>
+                    </div>
+                    <div class="form-group checkboxes flex">
+                        <input id="terms" type="checkbox" name="agreeterms" class="hide">
+                        <label class="agree-terms flex">
+                            <i class="fa fa-square-o"></i>
+                            <p>Agree on the <a href="#" class="text-info">TERMS</a></p>
+                        </label>
+                    </div>
+                </div>
+                <input type="submit" value="SIGN UP" class="btn btn-primary flex">
+            </form>
+
+        </div>
+        <!-- frontbox -->
+    </div>
+</main><script src="libs/jquery.min.js"></script>
+<script src="libs/bootstrap.min.js"></script>
+<script src="js/script.js"></script>
+</body>
+</html>
