@@ -32,10 +32,10 @@ a:active {
 
 body {
     background: #2a2c3b;
-    overflow: hidden;
     letter-spacing: 1px;
     font-family: 'Montserrat', sans-serif;
-    color: #d3d6ea
+    color: #d3d6ea;
+    height:100vh;
 }
 
 .trans {
@@ -159,11 +159,15 @@ header .list li + li {
     width: 84px;
     background-color: #2f3242;
     color: #737aa1;
-    height: calc(100vh - 80px);
+    height: calc(100% - 80px);
     align-items: flex-start;
     box-shadow: 10px 0px 15px -10px #1d1e29;
 }
-
+@media (max-width:768) {
+    .menu-bar-icons{
+        height:100%;
+    }
+}
 .menu-bar-icons ul {
     padding: 0 25px;
     top: 0;
@@ -183,10 +187,8 @@ header .list li + li {
 /*----------------------end side menu------------------*/
 
 main {
-    height: calc(100vh - 80px);
-    max-height: calc(100vh - 80px);
+    height:calc(100% - 80px);
     width: calc(100% - 84px);
-    overflow: hidden;
 }
 main .scroll{
     position:fixed;

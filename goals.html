@@ -94,7 +94,7 @@
             <div class="pull-left sort"><span id="projects-sort">all</span> Projects <span id="projects-count">(555)</span></div>
             <!--<div class="pull-left">Workflow</div>-->
             <div class="pull-right flex">
-                <div class="show-p pull-left">show Projects:</div>
+                <div class="show-p pull-left hidden-xs">show Projects:</div>
                 <div id="sort-projects" class="p-menu pull-left trans">
                     <i class="trans fa fa-chevron-down"></i>
                     <ul class="trans list-unstyled">
@@ -112,50 +112,54 @@
 <main class="pull-left">
     <section class="main">
         <div class="labels row">
-            <div class="col-sm-12 flex text-primary">
-                <div class="col-sm-3">Goal</div>
-                <div class="col-sm-3">Date</div>
-                <div class="col-sm-2">Time spent</div>
-                <div class="col-sm-3">Progress</div>
-                <div class="col-sm-1">Status</div>
-            </div>
-        </div>
-        <div class="row task">
-            <div class="col-sm-12 flex">
-                <div class="col-sm-3">goal</div>
-                <div class="col-sm-3">
-                    <span class="center-block">2017-11-19 02:18:59</span>
-                    <span class="subtext center-block"></span>
-                </div>
-                <div class="col-sm-2">0</div>
-                <div class="col-sm-3 flex">
-                    <span class="pull-left">0%</span>
-                    <div class="progress">
-                        <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 0%">
-                        </div>
-                    </div>
-                </div>
-                <div class="col-sm-1 flex">
-                    <a href="/mika/public/goals.php?action=delete&id=7">
-                        <div class="btn btn-danger">
-                            <i class="fa fa-remove"></i>
-                        </div>
-                    </a>
-                    <div class="text-warning">
-                        <i class="fa fa-chevron-up"></i>
-                    </div>
+            <div class="col-sm-12 text-primary">
+                <div class="row">
+                    <div class="col-sm-3 col-xs-5">Goal</div>
+                    <div class="col-sm-3 hidden-xs">Date</div>
+                    <div class="col-sm-2 hidden-xs">Time spent</div>
+                    <div class="col-sm-3 col-xs-4">Progress</div>
+                    <div class="col-sm-1 col-xs-3">Status</div>
                 </div>
             </div>
         </div>
         <div class="row task">
+            <div class="col-sm-12">
+                <div class="row flex">
+                    <div class="col-sm-3 col-xs-4">goal</div>
+                    <div class="col-sm-3 hidden-xs">
+                        <span class="center-block">2017-11-19 02:18:59</span>
+                        <span class="subtext center-block"></span>
+                    </div>
+                    <div class="col-sm-2 hidden-xs">0</div>
+                    <div class="col-sm-3 flex col-xs-5">
+                        <span class="pull-left">0%</span>
+                        <div class="progress">
+                            <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 0%">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-1 flex col-xs-3">
+                        <div class="text-warning">
+                            <i class="fa fa-chevron-up"></i>
+                        </div>
+                        <a href="/mika/public/goals.php?action=delete&id=7">
+                            <div class="btn btn-xs btn-danger">
+                                <i class="fa fa-remove"></i>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row task task-form">
             <form method="post" action="/mika/public/goals.php" class="col-sm-12 flex">
-                <div class="form-group col-sm-3">
+                <div class="form-group col-sm-3 col-xs-6">
                     <label class="control-label">
                         Goal Name
                     </label>
                     <input name="name" placeholder="Goal" type="text" class="form-control">
                 </div>
-                <div class="form-group col-sm-3">
+                <div class="form-group col-sm-3 col-xs-6">
                     <div class="goaltype flex">
                         <label data-target="timeform" for="timestep" class="control-label">
                             Time Step
@@ -179,19 +183,19 @@
                     </div>
 
                 </div>
-                <div class="form-group col-sm-2">
+                <div class="form-group col-sm-2 col-xs-4">
                     <label class="control-label">
                         Current Progress %
                     </label>
                     <input name="initialprogress" placeholder="(Percentage %)" type="number" class="form-control">
                 </div>
-                <div class="form-group col-sm-3">
+                <div class="form-group col-sm-3 col-xs-5">
                     <label class="control-label">
                         Target
                     </label>
                     <input name="target" placeholder="Target" type="text" class="form-control">
                 </div>
-                <input class="btn btn-success col-sm-1" value="Save" type="submit">
+                <input class="btn btn-success col-sm-1 col-xs-3" value="Save" type="submit">
             </form>
         </div>
     </section>
