@@ -61,7 +61,6 @@ header {
     font-size: 20px;
     margin-left: 15px;
 }
-
 .menu > li + li {
     margin-left: 40px;
 }
@@ -162,6 +161,7 @@ header .list li + li {
 /*----------------------start side menu----------------*/
 
 .menu-bar-icons {
+    width: 84px;
     background-color: #2f3242;
     color: #737aa1;
     height: calc(100vh - 80px);
@@ -213,7 +213,6 @@ header .list li + li {
     .menu-bar-icons{
         top:0;
         z-index: 9999;
-        
     }
 }
 

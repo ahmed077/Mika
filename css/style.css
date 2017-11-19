@@ -1,89 +1,3 @@
-/*base classes*/
-.box {
-    padding:15px;
-    border-radius:10px;
-    background: white;
-}
-.flex {
-    display:flex;
-    justify-content: center;
-    align-items: center;
-}
-hr {margin-top:5px}
-a,a:hover,a:active{text-decoration: none;color:inherit}
-*{margin: 0;padding:0;}
-body{background:#2a2c3b;letter-spacing: 1px;font-family:'Montserrat', sans-serif;}
-/*----------------------start header-------------------*/
-header {
-    background-color: #2f3242;
-    position:relative;
-    box-shadow: 0px 10px 35px -10px #1d1e29
-}
-.menu,.logo{
-    color: #fff;
-    height: 70px;
-}
-.menu li + li {
-    margin-left:40px;
-}
-.add-btn{
-    border: 2px solid #2091eb;
-    height: 50px;
-    width: 140px;
-    border-radius: 25px;
-}
-.add{
-    margin:0 15px 0 0;
-    padding: 5px 10px 5px 5px;
-}
-.icon{
-    padding-right: 10px;
-    color: #2091eb;
-}
-.notify{position: relative;}
-.notify::before {
-    display:block;
-    position: absolute;
-    content:"";
-    top:2px;
-    right:-2px;
-    background:#2091eb;
-    border:2px solid #2f3242;
-    border-radius:50%;
-    width:13px;
-    height:13px;
-}
-.profile{
-    width: 50px;
-    height: 50px;
-    background-color: #000;
-}
-.list{
-    margin-left: 10px;
-}
-.search,.notfication{font-size: 20px;}
-
-/*----------------------end header---------------------*/
-
-/*----------------------start side menu----------------*/
- .menu-bar-icons{
-    width:84px;
-    background-color: #2f3242;
-    color: #737aa1;
-    height:calc(100vh - 70px);
-    align-items:flex-start;
-    box-shadow: 10px 0px 15px -10px #1d1e29;
-}
- .menu-bar-icons ul{padding: 0 25px;top: 0;}
- .menu-bar-icons ul li{
-    font-size: 30px;
-    margin: 50px 0;
-}
- .menu-bar-icons ul li:hover{color: #fff;}
- .menu-bar-icons ul li a:focus{color: #FFF;}
-
-
-/*----------------------end side menu------------------*/
 /*----------------------start option bar---------------*/
 .option-bar{
     background-color: #237cc6;
@@ -105,35 +19,405 @@ header {
 }
 .option-bar .p-menu {
     height:30px;
-    padding:0 20px;
+    padding:0 40px 0 20px;
     border:1px solid #fff;
     border-radius:15px;
     position: relative;
+    cursor: pointer;
+    max-width:300px;
+    min-width:150px;
 }
-.option-bar .p-menu span {
+.option-bar .p-menu i {
     display: block;
-    margin-right:63px;
+    position:absolute;
+    right:10px;
+    top:8px;
+    z-index: 2;
 }
-.option-bar .p-menu.open {
-    border-radius:15px 15px 0 0;
-    border-bottom:none
-}
+
 .option-bar .p-menu ul {
-    position: absolute;
+    border-radius:15px;
+    position:absolute;
     border:1px solid #fff;
-    left:-1px;
     border-top:none;
-    border-radius:0 0 15px 15px;
-    overflow: hidden;
-    top:100%;
     width:calc(100% + 2px);
+    overflow: hidden;
+    left:-1px;
 }
 .option-bar .p-menu ul li {
-    padding:5px 0 5px 20px;
     background:#237cc6;
-    border-top:1px solid #fff;
+    padding:7px 0 7px 15px;
 }
-    /*-----------------------end option bar----------------*/
+
+.option-bar .p-menu ul li.selected {
+    background:#2a6ba1;
+}
+.option-bar .p-menu ul li:not(.selected) {
+    display:none;
+}
+/*-----------------------end option bar----------------*/
+/*  ======================
+    All Goals Page
+=======================  */
+main {
+    padding-right:15px;
+    padding-left:56px
+}
 .main{
-    padding:0 15px 0 40px;
+    padding:20px 15px 20px 0;
 }
+.main .labels{
+    padding-left:45px
+}
+.main .task {
+    padding-left:40px;
+}
+.main .labels, .main .task {
+    padding-top:20px;
+    padding-bottom:20px;
+}
+.main .task {
+    background:#3a3e52;
+    color:#fff;
+    border-left:5px solid #fff;
+    border-radius:5px;
+    padding-left:40px;
+    margin-bottom: 20px;
+}
+.main .task .flex {
+    justify-content: space-around
+}
+.main .task .subtext {
+    color:#9ea3b4;
+}
+.main .flex .prog span{
+    width:40px;
+}
+.main .flex .progress {
+    margin-bottom: 0;
+    background:#585c70;
+    height:7px;
+    width:calc(100% - 40px);
+    margin-left:5px;
+}
+.main .task > .flex {
+    width:100%;
+}
+.main .task .assign{
+    justify-content: flex-start;
+}
+.main .task i {
+    margin-left:auto;
+}
+.task .text-success {
+    color:#5cb85c;
+}
+.task .text-danger {
+    color:#d9534f;
+}
+.task .text-warning {
+    color:#f0ad4e;
+}
+/*=======================
+    Login/Signup Form
+========================*/
+.form {
+    height: 70%;
+    position: relative;
+    color:black;
+}
+
+.backbox {
+    background-color: #585c70;
+    width: 100%;
+    height: 80%;
+    display: inline-flex;
+}
+
+.frontbox {
+    background-color: white;
+    border-radius: 20px;
+    min-height: 100%;
+    width: 50%;
+    z-index: 10;
+    position: absolute;
+    right: 0;
+    margin-right: 3%;
+    margin-left: 3%;
+    transition: right .8s ease-in-out;
+}
+
+.moving {
+    right: 44%;
+}
+
+.loginMsg,
+.signupMsg {
+    width: 50%;
+    height: 100%;
+    font-size: 15px;
+    box-sizing: border-box;
+}
+
+.loginMsg .title,
+.signupMsg .title {
+    font-weight: 300;
+    font-size: 23px;
+}
+
+.loginMsg p,
+.signupMsg p {
+    font-weight: 100;
+}
+
+.textcontent {
+    color: white;
+}
+.inputbox{margin-top:30px}
+.loginMsg button,
+.signupMsg button {
+    background-color: transparent;
+    border: 2px solid white;
+    border-radius: 10px;
+    color: white;
+    font-size: 12px;
+    width: 80px;
+    box-sizing: content-box;
+    font-weight: 300;
+    padding: 10px;
+    margin-top: 20px;
+}
+
+/* front box content*/
+
+.login,
+.signup {
+    padding: 20px;
+    text-align: center;
+    min-height:100%;
+}
+
+.login h2,
+.signup h2 {
+    color: #337ab7;
+    font-size: 22px;
+    margin-top:0;
+}
+
+.login input:not([type="submit"]),
+.signup input:not([type="submit"]) {
+    display: block;
+    width: 100%;
+    height: 40px;
+    background-color: #f2f2f2;
+    border: none;
+    margin-bottom: 20px;
+    font-size: 12px;
+}
+
+.login,.signup{flex-direction: column;}
+/* Fade In & Out*/
+
+.login p {
+    cursor: pointer;
+    color: #404040;
+    font-size: 15px;
+}
+
+.loginMsg,
+.signupMsg {
+    transition: opacity .8s ease-in-out;
+}
+
+.visibility {
+    opacity: 0;
+}
+
+.forget{opacity: 0.7;}
+.forget:hover{opacity:1}
+.checkboxes{
+    color: #000;
+    width: 100%;
+    justify-content: flex-start;
+}
+.forget-ps{
+    font-weight: 100;
+    opacity: .9;
+}
+.forget-ps i, .agree-terms i{
+    margin-right: 10px;
+    width:15px;
+}
+.agree-terms p {
+    margin-bottom: 0;
+}
+/*------------------------add goal----------------------*/
+.main form {
+    align-items: flex-end;
+}
+.main form .form-group{
+    margin-bottom: 0;
+}
+.goaltype{
+    justify-content: space-around
+}
+.goaltype input[type='number']{
+    margin-bottom:10px;
+}
+/*------------------------end goal----------------------*/
+/*------------------------start chat--------------------*/
+main.chat{
+    padding: 0;
+    height:calc(100vh - 160px);
+}
+.conv-container{
+    padding: 0;
+    box-shadow: -15px 0 60px #000;
+    height: 100%;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+.conv-prev{
+    background-color: #2b2d3c;
+    padding: 20px;
+    width: 100%;
+    max-height:140px;
+    border-bottom: 1px solid #4d5060;
+}
+.conv-prev:last-of-type{
+    border: none;
+    padding-top: 30px;
+}
+.conv-info{
+    justify-content: space-between;
+}
+.photo{
+    width: 40px;
+    height: 40px;
+    margin-right: 10px;
+    border-radius: 50%;
+    background: #fff;
+}
+.last-msg{
+    width: 100%;
+    padding: 10px 0;
+}
+.last-msg p{font-size: 13px;}
+.plus{margin-right: 5px;}
+
+.chat-box{
+    height: 100%;
+    padding: 0;
+}
+.chat-container{
+    height:calc(100% - 60px);
+    padding: 5px 20px;
+}
+.msg{
+    padding: 25px 0;
+    justify-content: flex-start;
+}
+.sent{
+    flex-direction: row-reverse;
+}
+.sent .msg-date{
+    float:right;
+}
+.received .msg-img{
+    margin-right: 10px;
+}
+.sent .msg-img{
+    margin-left:10px;
+}
+.sent .msg-text {
+    border-radius:20px 20px 0 20px;
+    background: #237CC6;
+}
+.msg-content{
+    width:60%;
+}
+.msg-text{
+    background-color: #404359;
+    border-radius: 20px 20px 20px 0;
+}
+.msg-text p{
+    padding: 15px 20px;
+    margin: 0;
+}
+.msg-date{font-size: 10px;}
+.chat-input{
+    height: 60px;
+    padding: 5px 20px;
+    position: relative;
+}
+.chat-input input[type="text"]{
+    width: 100%;
+    background-color: #404359;
+    border: 1px solid #505464;
+    border-radius: 5px;
+    padding: 7px 0 7px 15px;
+}
+.chat-input i{
+    position: absolute;
+    font-size: 18px;
+    bottom:27px;
+    color: #737aa1;
+}
+.chat-input i:hover{
+    color: #fff;
+    cursor: pointer;
+}
+.chat-input i:first-of-type{
+    right: 65px;
+}
+.chat-input i:not(:first-of-type){
+    right: 35px;
+}
+
+.user-info{
+    height: 100%;
+    background-color: #2b2d3c;
+    box-shadow: 15px 0 60px #000;
+    justify-content: flex-start;
+    flex-direction: column;
+
+}
+.user-info .user-pic{
+    height:100px;
+    width:100px;
+    background-color:#fff;
+    margin: 25px 0 0 0;
+}
+.user-info .notify::before{
+    background: #4caf50;
+    width: 27px;
+    height: 27px;
+    border-width:3px;
+}
+.user-info .user-name-job h3{
+    margin: 20px 0 0 0;
+}
+.user-info .user-name-job h5{
+    margin: 5px 0 0 0;
+}
+.user-info .user-description p{
+    margin-top: 15px;
+    font-size: 11px;
+    line-height: 1.7;
+}
+.user-info .user-email p:first-of-type,
+.user-info .user-phone p:first-of-type,
+.user-info .user-adress p:first-of-type{
+    color: #9ca1b2;
+}
+.user-info .user-email p:first-of-type{
+    margin:30px 0 0 0;
+}
+.user-info .user-phone p:first-of-type{
+    margin:0
+}
+.user-info .user-adress p:first-of-type{
+    margin:0
+}
+
+/*------------------------end chat--------------------*/

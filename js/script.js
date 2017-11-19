@@ -93,14 +93,13 @@ $(function () {
     
     //addgoal form
     $('.goaltype label').on('click', function (e) {
-        var target = $(e.currentTarget).data('target'),
-            other = target === 'dateform' ? 'timeform' : 'dateform';
-        if ($("#" + target).hasClass('hide')) {
+          var target = $(e.currentTarget).data('target'),
+              other = target === 'dateform' ? 'timeform' : 'dateform';
+          if ($("#" + target).hasClass('hide')) {
             $('#' + other).slideUp(400, function () {
                 $(this).addClass('hide');
             });
             $("#" + target).hide().removeClass('hide').slideDown(400);
-            
         }
     });
     //login / signup form validation client side
@@ -141,12 +140,6 @@ $(function () {
     $('#settings-menu').on('click', function () {
         $(this).siblings('ul').slideToggle();
     });
-//    $('.menu-bar-icons').mouseenter(function () {
-//        menuHover($(this));
-//    });
-//    $('.menu-bar-icons').mouseleave(function () {
-//        menuHover($(this));
-//    });
     function menuHover() {
         $('.menu-text', $(this)).toggleClass('hidden');
     }
@@ -163,5 +156,4 @@ $(function () {
             width: '186.3px'
         });
     });
-
 });
