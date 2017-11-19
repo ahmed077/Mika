@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -16,15 +15,19 @@
         <div class="row">
             <div class="col-xs-12">
                 <div class="pull-left flex logo">
-                    <h3>logo</h3>
+                    <div class="mobile-menu visible-xs">
+                        <i class="fa fa-bars fa-2x"></i>
+                    </div>
+                    <span>logo</span>
                 </div>
                 <ul class="pull-right flex menu list-unstyled">
                     <li>
                         <a href="#">
-                            <div class="flex add-btn">
+                            <div class="flex add-btn hidden-xs">
                                 <h3 class="add">Add</h3>
                                 <i class="fa fa-plus icon" aria-hidden="true"></i>
                             </div>
+                            <div class="btn btn-primary visible-xs"><i class="fa fa-plus"></i></div>
                         </a>
                     </li>
                     <!--<li class="search">-->
@@ -61,31 +64,37 @@
         </div>
     </div>
 </header>
-<aside class="menu-bar-icons flex pull-left">
+<aside class="menu-bar-icons flex pull-left hidden-xs">
+    <div class="remove"><i class="fa fa-remove fa-2x"></i></div>
     <ul class="list-unstyled">
         <li class="active">
-            <a href="index.php">
+            <a  class="flex"href="index.php">
                 <i class="fa fa-home" aria-hidden="true"></i>
+                <div class="menu-text hidden">Home</div>
             </a>
         </li>
         <li class="">
-            <a href="goals.php">
+            <a  class="flex"href="goals.php">
                 <i class="fa fa-bars" aria-hidden="true"></i>
+                <div class="menu-text hidden">Goals</div>
             </a>
         </li>
         <li class="">
-            <a href="#">
+            <a  class="flex"href="#">
                 <i class="fa fa-line-chart" aria-hidden="true"></i>
+                <div class="menu-text hidden">Chart</div>
             </a>
         </li>
         <li class="">
-            <a href="chat.php">
+            <a  class="flex"href="chat.php">
                 <i class="fa fa-envelope" aria-hidden="true"></i>
+                <div class="menu-text hidden">Messages</div>
             </a>
         </li>
         <li class="">
-            <a href="members.php">
+            <a  class="flex"href="members.php">
                 <i class="fa fa-users" aria-hidden="true"></i>
+                <div class="menu-text hidden">Friends</div>
             </a>
         </li>
     </ul>

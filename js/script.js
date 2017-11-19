@@ -93,13 +93,13 @@ $(function () {
     
     //addgoal form
     $('.goaltype label').on('click', function (e) {
-            var target = $(e.currentTarget).data('target'),
-                other = target === 'dateform' ? 'timeform' : 'dateform';
-            if ($("#" + target).hasClass('hide')) {
-                $('#' + other).slideUp(400, function () {
-                    $(this).addClass('hide');
-                });
-                $("#" + target).hide().removeClass('hide').slideDown(400);
+        var target = $(e.currentTarget).data('target'),
+            other = target === 'dateform' ? 'timeform' : 'dateform';
+        if ($("#" + target).hasClass('hide')) {
+            $('#' + other).slideUp(400, function () {
+                $(this).addClass('hide');
+            });
+            $("#" + target).hide().removeClass('hide').slideDown(400);
             
         }
     });
@@ -141,4 +141,27 @@ $(function () {
     $('#settings-menu').on('click', function () {
         $(this).siblings('ul').slideToggle();
     });
+//    $('.menu-bar-icons').mouseenter(function () {
+//        menuHover($(this));
+//    });
+//    $('.menu-bar-icons').mouseleave(function () {
+//        menuHover($(this));
+//    });
+    function menuHover() {
+        $('.menu-text', $(this)).toggleClass('hidden');
+    }
+    $('.menu-bar-icons').on('mouseenter mouseleave', menuHover);
+    $('.mobile-menu').click(function () {
+        $('.mobile-menu').addClass('hidden').removeClass('visible-xs');
+        $('.menu-bar-icons').off('mouseenter mouseleave', menuHover);
+        $('.menu-bar-icons').removeClass('hidden-xs');
+        $('header').animate({
+            width: $('header').width() - '186.3' + 'px'
+        });
+        $('.menu-text').removeClass('hidden');
+        $('aside').width(0).removeClass("hidden-xs").animate({
+            width: '186.3px'
+        });
+    });
+
 });

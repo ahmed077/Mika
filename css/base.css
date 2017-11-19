@@ -46,14 +46,20 @@ body {
 
 header {
     background-color: #2f3242;
-    position: relative;
-    box-shadow: 0px 10px 35px -10px #1d1e29
+    position: absolute;
+    width: 100%;
+    box-shadow: 0px 10px 35px -10px #1d1e29;
+    z-index: 9999;
+    right: 0
 }
-
 .menu,
 .logo {
     color: #fff;
     height: 70px;
+}
+.logo span{
+    font-size: 20px;
+    margin-left: 15px;
 }
 
 .menu > li + li {
@@ -156,12 +162,17 @@ header .list li + li {
 /*----------------------start side menu----------------*/
 
 .menu-bar-icons {
-    width: 84px;
     background-color: #2f3242;
     color: #737aa1;
     height: calc(100vh - 80px);
     align-items: flex-start;
     box-shadow: 10px 0px 15px -10px #1d1e29;
+    position: absolute;
+    top: 80px;
+}
+.menu-text{
+    display: inline-block;
+    font-size: 18px;
 }
 
 .menu-bar-icons ul {
@@ -171,13 +182,39 @@ header .list li + li {
 
 .menu-bar-icons ul li {
     font-size: 30px;
-    margin: 50px 0;
+}
+.menu-bar-icons ul li + li{
+    margin-top:50px
+}
+.menu-bar-icons ul li:first-of-type{
+    margin-top: 35px
+}
+.menu-bar-icons ul li a{
+    justify-content: flex-start;
+}
+.menu-bar-icons ul li a i{
+    margin-right: 15px;
 }
 
 .menu-bar-icons ul li:hover,
 .menu-bar-icons ul li a:focus,
 .menu-bar-icons .active {
     color: #fff;
+}
+.remove{
+    color: #fff;
+    position: absolute;
+    top: 5px;
+    right: 20px;
+    justify-content: flex-start;
+    margin: 0;
+}
+@media(max-width: 768px){
+    .menu-bar-icons{
+        top:0;
+        z-index: 9999;
+        
+    }
 }
 
 /*----------------------end side menu------------------*/
