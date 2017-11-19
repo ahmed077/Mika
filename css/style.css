@@ -55,7 +55,7 @@
 .option-bar .p-menu ul li:not(.selected) {
     display:none;
 }
-    /*-----------------------end option bar----------------*/
+/*-----------------------end option bar----------------*/
 /*  ======================
     All Goals Page
 =======================  */
@@ -81,7 +81,11 @@ main {
     color:#fff;
     border-left:5px solid #fff;
     border-radius:5px;
+    padding-left:40px;
     margin-bottom: 20px;
+}
+.main .task .flex {
+    justify-content: space-around
 }
 .main .task .subtext {
     color:#9ea3b4;
@@ -96,9 +100,6 @@ main {
     width:calc(100% - 40px);
     margin-left:5px;
 }
-.main .row .flex > div:not(.progress):not(.profile) {
-    margin-left:20px;
-}
 .main .task > .flex {
     width:100%;
 }
@@ -108,13 +109,22 @@ main {
 .main .task i {
     margin-left:auto;
 }
+.task .text-success {
+    color:#5cb85c;
+}
+.task .text-danger {
+    color:#d9534f;
+}
+.task .text-warning {
+    color:#f0ad4e;
+}
 /*=======================
     Login/Signup Form
 ========================*/
 .form {
     height: 70%;
     position: relative;
-
+    color:black;
 }
 
 .backbox {
@@ -241,3 +251,173 @@ main {
 .agree-terms p {
     margin-bottom: 0;
 }
+/*------------------------add goal----------------------*/
+.main form {
+    align-items: flex-end;
+}
+.main form .form-group{
+    margin-bottom: 0;
+}
+.goaltype{
+    justify-content: space-around
+}
+.goaltype input[type='number']{
+    margin-bottom:10px;
+}
+/*------------------------end goal----------------------*/
+/*------------------------start chat--------------------*/
+main.chat{
+    padding: 0;
+    height:calc(100vh - 160px);
+}
+.conv-container{
+    padding: 0;
+    box-shadow: -15px 0 60px #000;
+    height: 100%;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+.conv-prev{
+    background-color: #2b2d3c;
+    padding: 20px;
+    width: 100%;
+    max-height:140px;
+    border-bottom: 1px solid #4d5060;
+}
+.conv-prev:last-of-type{
+    border: none;
+    padding-top: 30px;
+}
+.conv-info{
+    justify-content: space-between;
+}
+.photo{
+    width: 40px;
+    height: 40px;
+    margin-right: 10px;
+    border-radius: 50%;
+    background: #fff;
+}
+.last-msg{
+    width: 100%;
+    padding: 10px 0;
+}
+.last-msg p{font-size: 13px;}
+.plus{margin-right: 5px;}
+
+.chat-box{
+    height: 100%;
+    padding: 0;
+}
+.chat-container{
+    height:calc(100% - 60px);
+    padding: 5px 20px;
+}
+.msg{
+    padding: 25px 0;
+    justify-content: flex-start;
+}
+.sent{
+    flex-direction: row-reverse;
+}
+.sent .msg-date{
+    float:right;
+}
+.received .msg-img{
+    margin-right: 10px;
+}
+.sent .msg-img{
+    margin-left:10px;
+}
+.sent .msg-text {
+    border-radius:20px 20px 0 20px;
+    background: #237CC6;
+}
+.msg-content{
+    width:60%;
+}
+.msg-text{
+    background-color: #404359;
+    border-radius: 20px 20px 20px 0;
+}
+.msg-text p{
+    padding: 15px 20px;
+    margin: 0;
+}
+.msg-date{font-size: 10px;}
+.chat-input{
+    height: 60px;
+    padding: 5px 20px;
+    position: relative;
+}
+.chat-input input[type="text"]{
+    width: 100%;
+    background-color: #404359;
+    border: 1px solid #505464;
+    border-radius: 5px;
+    padding: 7px 0 7px 15px;
+}
+.chat-input i{
+    position: absolute;
+    font-size: 18px;
+    bottom:27px;
+    color: #737aa1;
+}
+.chat-input i:hover{
+    color: #fff;
+    cursor: pointer;
+}
+.chat-input i:first-of-type{
+    right: 65px;
+}
+.chat-input i:not(:first-of-type){
+    right: 35px;
+}
+
+.user-info{
+    height: 100%;
+    background-color: #2b2d3c;
+    box-shadow: 15px 0 60px #000;
+    justify-content: flex-start;
+    flex-direction: column;
+
+}
+.user-info .user-pic{
+    height:100px;
+    width:100px;
+    background-color:#fff;
+    margin: 25px 0 0 0;
+}
+.user-info .notify::before{
+    background: #4caf50;
+    width: 27px;
+    height: 27px;
+    border-width:3px;
+}
+.user-info .user-name-job h3{
+    margin: 20px 0 0 0;
+}
+.user-info .user-name-job h5{
+    margin: 5px 0 0 0;
+}
+.user-info .user-description p{
+    margin-top: 15px;
+    font-size: 11px;
+    line-height: 1.7;
+}
+.user-info .user-email p:first-of-type,
+.user-info .user-phone p:first-of-type,
+.user-info .user-adress p:first-of-type{
+    color: #9ca1b2;
+}
+.user-info .user-email p:first-of-type{
+    margin:30px 0 0 0;
+}
+.user-info .user-phone p:first-of-type{
+    margin:0
+}
+.user-info .user-adress p:first-of-type{
+    margin:0
+}
+
+/*------------------------end chat--------------------*/

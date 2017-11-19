@@ -3,6 +3,8 @@ $(function () {
     "use strict";
     function addGoal() {
     }
+    
+    //Goals dropdown menu
     $('#sort-projects').on('click', function (e) {
         var t = $(e.target);
         if (!t.hasClass('selected')) {
@@ -23,6 +25,7 @@ $(function () {
             });
         }
     });
+    //Login/Sign up form
     var moving = false,
         divTall = 0,
         mainTall,
@@ -33,24 +36,6 @@ $(function () {
         $signupMsg = $('.signupMsg'),
         $signup = $('.signup'),
         $frontbox = $('.frontbox');
-/*
-    $('#switch1').on('click', function () {
-        $loginMsg.toggleClass("visibility");
-        $frontbox.addClass("moving");
-        $signupMsg.toggleClass("visibility");
-
-        $signup.toggleClass('hide');
-        $login.toggleClass('hide');
-    });
-    
-    $('#switch2').on('click', function () {
-        $loginMsg.toggleClass("visibility");
-        $frontbox.removeClass("moving");
-        $signupMsg.toggleClass("visibility");
-
-        $signup.toggleClass('hide');
-        $login.toggleClass('hide');
-    });*/
     $signup.hide().removeClass('hide');
     $('#switch1, #switch2').on('click', function () {
         if (!moving) {
@@ -67,6 +52,7 @@ $(function () {
             });
         }
     });
+    //login/signup form checkboxes
     $('.forget-ps, .agree-terms').on('click', function () {
         if ($(this).hasClass('forget-ps')) {
             $(this).toggleClass('text-muted');
@@ -77,6 +63,8 @@ $(function () {
             $('i', this).removeClass('fa-square-o').addClass('fa-check-square-o');
         }
     });
+    //scrollbar
+    //height function
     $('.task').each(function () {
         divTall += $(this).outerHeight();
     });
@@ -85,4 +73,72 @@ $(function () {
     mainTall = mainTall - mainTall * 10 / 100;
     scrollTall = mainTall * tallPerc / 100;
     $('.scroll').css('height', scrollTall + 'px');
+    function scrollHandle(scrollData, section) {
+        if (scrollData > 0) {
+            section.css('margin-top', parseInt(section.css('margin-top'), 10) + 30 + "px");
+        } else {
+            section.css('margin-top', parseInt(section.css('margin-top'), 10) - 30 + "px");
+        }
+    }
+    $('.main').bind('mousewheel', function (e) {
+        var scrollData = e.originalEvent.wheelDelta,
+            target = $('.task-container');
+        scrollHandle(scrollData, target);
+    });
+    $('.main').bind('DOMMouseScroll', function (e) {
+        var scrollData = e.originalEvent.detail,
+            target = $('.task-container');
+        scrollHandle(scrollData, target);
+    });
+    
+    //addgoal form
+    $('.goaltype label').on('click', function (e) {
+            var target = $(e.currentTarget).data('target'),
+                other = target === 'dateform' ? 'timeform' : 'dateform';
+            if ($("#" + target).hasClass('hide')) {
+                $('#' + other).slideUp(400, function () {
+                    $(this).addClass('hide');
+                });
+                $("#" + target).hide().removeClass('hide').slideDown(400);
+            
+        }
+    });
+    //login / signup form validation client side
+    $('.login').on('submit', function (e) {
+        var error = false,
+            email = $('#login-email', $(e.currentTarget)).val(),
+            password = $('#login-password', $(e.currentTarget)).val();
+        //validation
+        if (error) {
+            e.preventDefault();
+        }
+    });
+    $('.signup').on('submit', function (e) {
+        var error = false,
+            name = $('#signup-name', $(e.currentTarget)),
+            email = $('#signup-email', $(e.currentTarget)),
+            password = $('#signup-password', $(e.currentTarget)),
+            confirmpassword = $('#signup-confirmpassword', $(e.currentTarget));
+        if (password.val().length < 8 || password.val().length > 20) {
+            password.siblings('.error').text('Password is allowed between 8 & 20 characters').hide().removeClass('hide').slideDown();
+            error = true;
+        } else if (confirmpassword.val() !== password.val()) {
+            confirmpassword.siblings('.error').text("Password doesn't match.").hide().removeClass('hide').slideDown();
+            error = true;
+        }
+        //validation
+        if (error) {
+            e.preventDefault();
+        }
+    });
+    //test function
+    function testString(val, pat) {
+        var res = pat.match(val);
+        return res;
+    }
+    //toggle header menu
+    $('#settings-menu').siblings('ul').hide().removeClass('hide');
+    $('#settings-menu').on('click', function () {
+        $(this).siblings('ul').slideToggle();
+    });
 });

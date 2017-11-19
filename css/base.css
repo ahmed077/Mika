@@ -32,6 +32,7 @@ a:active {
 
 body {
     background: #2a2c3b;
+    overflow: hidden;
     letter-spacing: 1px;
     font-family: 'Montserrat', sans-serif;
     color: #d3d6ea
@@ -55,7 +56,7 @@ header {
     height: 70px;
 }
 
-.menu li + li {
+.menu > li + li {
     margin-left: 40px;
 }
 
@@ -107,7 +108,49 @@ header {
 .notfication {
     font-size: 20px;
 }
-
+header .list{
+    position: relative;
+}
+header .list > i{
+    color:#2091eb;
+    cursor: pointer;
+}
+header .list ul {
+    position:absolute;
+    top:55px;
+    right:8px;
+    z-index:9999;
+    background:#2f3242;
+    border:2px solid #2091eb;
+    border-radius:5px;
+}
+header .list ul::before{
+    position: absolute;
+    content: '';
+    display: block;
+    background:transparent;
+    top:-35px;
+    right:-2px;
+    border-top:25px solid transparent;
+    border-right:15px solid #2091eb;
+    border-left:60px solid transparent;
+    border-bottom:10px solid #2091eb;
+}
+header .list li {
+    position:relative;
+}
+header .list li i {
+    position: absolute;
+    left:10px;
+    top:15px;
+}
+header .list li a {
+    padding:10px 10px 10px 30px;
+    display: block;
+}
+header .list li + li {
+    border-top:2px solid #2091eb;
+}
 /*----------------------end header---------------------*/
 
 /*----------------------start side menu----------------*/
@@ -151,7 +194,7 @@ main .scroll{
     height:calc(90% - 80px);
     background:#333;
     border:1px solid #999;
-    top:calc(5% + 80px);
+    top:calc(5% + 160px);
     border-radius: 5px;
     right: 2px;
 }

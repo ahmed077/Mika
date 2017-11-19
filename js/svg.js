@@ -26,7 +26,8 @@ function getCoords(perc, path) {
 }
 function animate() {
     'use strict';
-    var path = document.getElementsByTagName('path')[1],
+    var path = document.getElementById('path_1'),
+        text = document.getElementById('text_1'),
         t = parseFloat(path.getAttribute('data-percent'), 10),
         time = Math.floor(1000 / t),
         i = 0,
@@ -36,6 +37,7 @@ function animate() {
             clearInterval(intv);
         }
         path.setAttribute('d', getCoords(i, path));
+        text.textContent = i;
         i = i + 1;
     }, time);
 }
