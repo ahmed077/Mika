@@ -66,11 +66,13 @@ main {
 .main{
     padding:20px 15px 20px 0;
 }
-.main .labels{
-    padding-left:45px
+@media (min-width:768px) {
+    .main .labels, .main .task{
+        padding-left:45px
+    }
 }
-.main .task {
-    padding-left:40px;
+.main .task-form > .flex {
+    flex-wrap: wrap;
 }
 .main .labels, .main .task {
     padding-top:20px;
@@ -81,7 +83,7 @@ main {
     color:#fff;
     border-left:5px solid #fff;
     border-radius:5px;
-    padding-left:40px;
+    
     margin-bottom: 20px;
 }
 .main .task .flex {
