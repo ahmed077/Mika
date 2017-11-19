@@ -69,6 +69,9 @@ main {
 .main .labels{
     padding-left:45px
 }
+.main .task {
+    padding-left:40px;
+}
 .main .labels, .main .task {
     padding-top:20px;
     padding-bottom:20px;

@@ -141,6 +141,4 @@ $(function () {
     $('#settings-menu').on('click', function () {
         $(this).siblings('ul').slideToggle();
     });
-
-
 });
